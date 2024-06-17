@@ -1,16 +1,20 @@
 CC = gcc
 CFLAGS = -Wall -Werror
+INCLUDES = -Iinclude
 
-all: myprogram
+# Targets
+TARGET = myprogram
+SOURCES = src/main.cpp src/request.cpp src/request_queue.cpp src/load_balancer.cpp src/web_server.ccp
+OBJECTS = $(SOURCES:.cpp=.o)
 
-myprogram: main.o utils.o
-    $(CC) $(CFLAGS) -o myprogram main.o utils.o
+# Build the executable
+$(TARGET): $(OBJECTS)
+	$(CC) $(CFLAGS) $(INCLUDES) -o $(TARGET) $(OBJECTS)
 
-main.o: main.c
-    $(CC) $(CFLAGS) -c main.c
+# Compile the source files into object files
+src/%.o: src/%.cpp
+	$(CC) $(CFLAGS) $(INCLUDES) -c $< -o $@
 
-utils.o: utils.c
-    $(CC) $(CFLAGS) -c utils.c
-
+# Clean the build directory
 clean:
-    rm -f myprogram *.o
+	rm -f $(TARGET) $(OBJECTS)
