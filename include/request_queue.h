@@ -1,24 +1,50 @@
+/**
+ * @file request_queue.h
+ * @brief Header file for the RequestQueue class.
+ */
+
 #ifndef REQUEST_QUEUE_H
 #define REQUEST_QUEUE_H
 
-#include <queue>
 #include "request.h"
+#include <queue>
 
-using namespace std;
-
+/**
+ * @brief Class to represent a queue of requests.
+ */
 class RequestQueue {
-private:
-    queue<Request> q;
-
 public:
-    // Method to add a request to the queue
+    /**
+     * @brief Constructor for RequestQueue.
+     */
+    RequestQueue();
+
+    /**
+     * @brief Method to add a request to the queue.
+     * @param request The request to be added.
+     */
     void addRequest(const Request& request);
 
-    // Method to get the next request from the queue
+    /**
+     * @brief Method to get the next request from the queue.
+     * @return Request The next request in the queue.
+     */
     Request getNextRequest();
 
-    // Method to check if the queue is empty
+    /**
+     * @brief Method to check if the queue is empty.
+     * @return bool True if the queue is empty, false otherwise.
+     */
     bool isEmpty() const;
+
+    /**
+     * @brief Method to get the current size of the queue.
+     * @return int The size of the queue.
+     */
+    int getQueueSize() const;
+
+private:
+    std::queue<Request> q; ///< Queue of requests.
 };
 
 #endif // REQUEST_QUEUE_H

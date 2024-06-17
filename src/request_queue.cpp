@@ -1,42 +1,38 @@
-/*! \file */
+/**
+ * @file request_queue.cpp
+ * @brief Implementation file for the RequestQueue class.
+ */
 
-/*! \brief Include request.h for Request class definition. */
-#include "request.h"
-/*! \brief Include web_server.h for WebServer class definition. */
-#include "web_server.h"
-/*! \brief Include request_queue.h for RequestQueue class definition. */
 #include "request_queue.h"
-/*! \brief Include load_balancer.h for LoadBalancer class definition. */
-#include "load_balancer.h"
+#include "request.h"
+#include <queue>
 
-#include <queue>    //!< Include queue for std::queue container.
+using namespace std;
 
-using namespace std; //!< Use the standard namespace.
+// Constructor
+RequestQueue::RequestQueue() {}
 
-/*! \class RequestQueue
-    \brief Represents a queue for holding requests.
+// Method to add a request to the queue
+void RequestQueue::addRequest(const Request& request) {
+    q.push(request);
+}
 
-    This class manages a queue of Request objects and provides methods
-    to add requests, retrieve the next request, and check if the queue
-    is empty.
-*/
-class RequestQueue {
-public:
-    /*! \brief Add a request to the queue.
-        \param request The Request object to add.
-    */
-    void addRequest(const Request& request);
+// Method to get the next request from the queue
+Request RequestQueue::getNextRequest() {
+    if (!q.empty()) {
+        Request req = q.front();
+        q.pop();
+        return req;
+    }
+    return {"", "", 0}; // Return an empty request if the queue is empty
+}
 
-    /*! \brief Get the next request from the queue.
-        \return The next Request object in the queue.
-    */
-    Request getNextRequest();
+// Method to check if the queue is empty
+bool RequestQueue::isEmpty() const {
+    return q.empty();
+}
 
-    /*! \brief Check if the queue is empty.
-        \return true if the queue is empty, false otherwise.
-    */
-    bool isEmpty() const;
-
-private:
-    queue<Request> q; //!< The underlying queue to hold Request objects.
-};
+// Method to get the current size of the queue
+int RequestQueue::getQueueSize() const {
+    return q.size();
+}

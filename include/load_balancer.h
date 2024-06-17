@@ -1,37 +1,63 @@
+/**
+ * @file load_balancer.h
+ * @brief Header file for the LoadBalancer class.
+ */
+
 #ifndef LOAD_BALANCER_H
 #define LOAD_BALANCER_H
 
-#include "request.h"
 #include "web_server.h"
 #include "request_queue.h"
-
 #include <vector>
-using namespace std;
 
-// Class for LoadBalancer
+/**
+ * @brief Class to represent a Load Balancer.
+ */
 class LoadBalancer {
-private:
-    vector<WebServer> servers;
-    RequestQueue request_queue;
-
 public:
-    // Constructor
+    /**
+     * @brief Constructor for LoadBalancer.
+     * @param num_servers Number of servers in the load balancer.
+     */
     LoadBalancer(int num_servers);
 
-    // Method to add a server
+    /**
+     * @brief Method to add a server to the load balancer.
+     */
     void addServer();
 
-    // Method to remove a server
+    /**
+     * @brief Method to remove a server from the load balancer.
+     */
     void removeServer();
 
-    // Method to balance load across servers
+    /**
+     * @brief Method to balance the load across servers.
+     * @param cycle_time Time for each balance cycle.
+     */
     void balanceLoad(int cycle_time);
 
-    // Method to add a request to the queue
+    /**
+     * @brief Method to add a request to the request queue.
+     * @param request The request to be added.
+     */
     void addRequest(const Request& request);
 
-    // Method to run the load balancer simulation
+    /**
+     * @brief Method to run the load balancer simulation.
+     * @param total_time Total time for the simulation.
+     */
     void run(int total_time);
+
+    /**
+     * @brief Method to get the current size of the request queue.
+     * @return int The size of the request queue.
+     */
+    int getQueueSize() const;
+
+private:
+    std::vector<WebServer> servers; ///< Vector of servers.
+    RequestQueue request_queue; ///< Request queue.
 };
 
 #endif // LOAD_BALANCER_H
