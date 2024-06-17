@@ -1,35 +1,35 @@
 \doxysection{web\+\_\+server.\+cpp}
 \hypertarget{web__server_8cpp_source}{}\label{web__server_8cpp_source}\index{src/web\_server.cpp@{src/web\_server.cpp}}
-
+\mbox{\hyperlink{web__server_8cpp}{Go to the documentation of this file.}}
 \begin{DoxyCode}{0}
 \DoxyCodeLine{\Hypertarget{web__server_8cpp_source_l00001}00001\ }
-\DoxyCodeLine{\Hypertarget{web__server_8cpp_source_l00008}00008\ \textcolor{preprocessor}{\#include\ "{}web\_server.h"{}}}
-\DoxyCodeLine{\Hypertarget{web__server_8cpp_source_l00009}00009\ \textcolor{preprocessor}{\#include\ "{}request.h"{}}}
-\DoxyCodeLine{\Hypertarget{web__server_8cpp_source_l00010}00010\ \textcolor{preprocessor}{\#include\ "{}load\_balancer.h"{}}}
-\DoxyCodeLine{\Hypertarget{web__server_8cpp_source_l00011}00011\ \textcolor{preprocessor}{\#include\ "{}request\_queue.h"{}}}
+\DoxyCodeLine{\Hypertarget{web__server_8cpp_source_l00006}00006\ \textcolor{preprocessor}{\#include\ "{}web\_server.h"{}}}
+\DoxyCodeLine{\Hypertarget{web__server_8cpp_source_l00007}00007\ \textcolor{preprocessor}{\#include\ "{}request.h"{}}}
+\DoxyCodeLine{\Hypertarget{web__server_8cpp_source_l00008}00008\ \textcolor{preprocessor}{\#include\ "{}load\_balancer.h"{}}}
+\DoxyCodeLine{\Hypertarget{web__server_8cpp_source_l00009}00009\ \textcolor{preprocessor}{\#include\ "{}request\_queue.h"{}}}
+\DoxyCodeLine{\Hypertarget{web__server_8cpp_source_l00010}00010\ }
+\DoxyCodeLine{\Hypertarget{web__server_8cpp_source_l00011}00011\ \textcolor{preprocessor}{\#include\ <chrono>}\ \ \ \textcolor{comment}{//\ for\ high\_resolution\_clock}}
 \DoxyCodeLine{\Hypertarget{web__server_8cpp_source_l00012}00012\ }
-\DoxyCodeLine{\Hypertarget{web__server_8cpp_source_l00013}00013\ \textcolor{preprocessor}{\#include\ <chrono>}\ \ \ \textcolor{comment}{//\ for\ high\_resolution\_clock}}
+\DoxyCodeLine{\Hypertarget{web__server_8cpp_source_l00013}00013\ \textcolor{keyword}{using\ namespace\ }std;}
 \DoxyCodeLine{\Hypertarget{web__server_8cpp_source_l00014}00014\ }
-\DoxyCodeLine{\Hypertarget{web__server_8cpp_source_l00015}00015\ \textcolor{keyword}{using\ namespace\ }std;}
-\DoxyCodeLine{\Hypertarget{web__server_8cpp_source_l00016}00016\ }
-\DoxyCodeLine{\Hypertarget{web__server_8cpp_source_l00020}00020\ WebServer::WebServer()\ :\ is\_busy(false)\ \{\}}
-\DoxyCodeLine{\Hypertarget{web__server_8cpp_source_l00021}00021\ }
-\DoxyCodeLine{\Hypertarget{web__server_8cpp_source_l00026}00026\ \textcolor{keywordtype}{void}\ WebServer::processRequest(\textcolor{keyword}{const}\ Request\&\ request)\ \{}
-\DoxyCodeLine{\Hypertarget{web__server_8cpp_source_l00027}00027\ \ \ \ \ current\_request\ =\ request;}
-\DoxyCodeLine{\Hypertarget{web__server_8cpp_source_l00028}00028\ \ \ \ \ is\_busy\ =\ \textcolor{keyword}{true};}
-\DoxyCodeLine{\Hypertarget{web__server_8cpp_source_l00029}00029\ \}}
-\DoxyCodeLine{\Hypertarget{web__server_8cpp_source_l00030}00030\ }
-\DoxyCodeLine{\Hypertarget{web__server_8cpp_source_l00035}00035\ \textcolor{keywordtype}{bool}\ WebServer::isBusy()\textcolor{keyword}{\ const\ }\{}
-\DoxyCodeLine{\Hypertarget{web__server_8cpp_source_l00036}00036\ \ \ \ \ \textcolor{keywordflow}{return}\ is\_busy;}
-\DoxyCodeLine{\Hypertarget{web__server_8cpp_source_l00037}00037\ \}}
-\DoxyCodeLine{\Hypertarget{web__server_8cpp_source_l00038}00038\ }
-\DoxyCodeLine{\Hypertarget{web__server_8cpp_source_l00043}00043\ \textcolor{keywordtype}{void}\ WebServer::update(\textcolor{keywordtype}{int}\ cycle\_time)\ \{}
-\DoxyCodeLine{\Hypertarget{web__server_8cpp_source_l00044}00044\ \ \ \ \ \textcolor{keywordflow}{if}\ (is\_busy)\ \{}
-\DoxyCodeLine{\Hypertarget{web__server_8cpp_source_l00045}00045\ \ \ \ \ \ \ \ \ current\_request.time\ -\/=\ cycle\_time;}
-\DoxyCodeLine{\Hypertarget{web__server_8cpp_source_l00046}00046\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (current\_request.time\ <=\ 0)\ \{}
-\DoxyCodeLine{\Hypertarget{web__server_8cpp_source_l00047}00047\ \ \ \ \ \ \ \ \ \ \ \ \ is\_busy\ =\ \textcolor{keyword}{false};}
-\DoxyCodeLine{\Hypertarget{web__server_8cpp_source_l00048}00048\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{web__server_8cpp_source_l00049}00049\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{web__server_8cpp_source_l00050}00050\ \}}
+\DoxyCodeLine{\Hypertarget{web__server_8cpp_source_l00018}00018\ WebServer::WebServer()\ :\ is\_busy(false)\ \{\}}
+\DoxyCodeLine{\Hypertarget{web__server_8cpp_source_l00019}00019\ }
+\DoxyCodeLine{\Hypertarget{web__server_8cpp_source_l00024}00024\ \textcolor{keywordtype}{void}\ WebServer::processRequest(\textcolor{keyword}{const}\ Request\&\ request)\ \{}
+\DoxyCodeLine{\Hypertarget{web__server_8cpp_source_l00025}00025\ \ \ \ \ current\_request\ =\ request;}
+\DoxyCodeLine{\Hypertarget{web__server_8cpp_source_l00026}00026\ \ \ \ \ is\_busy\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{web__server_8cpp_source_l00027}00027\ \}}
+\DoxyCodeLine{\Hypertarget{web__server_8cpp_source_l00028}00028\ }
+\DoxyCodeLine{\Hypertarget{web__server_8cpp_source_l00033}00033\ \textcolor{keywordtype}{bool}\ WebServer::isBusy()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{\Hypertarget{web__server_8cpp_source_l00034}00034\ \ \ \ \ \textcolor{keywordflow}{return}\ is\_busy;}
+\DoxyCodeLine{\Hypertarget{web__server_8cpp_source_l00035}00035\ \}}
+\DoxyCodeLine{\Hypertarget{web__server_8cpp_source_l00036}00036\ }
+\DoxyCodeLine{\Hypertarget{web__server_8cpp_source_l00041}00041\ \textcolor{keywordtype}{void}\ WebServer::update(\textcolor{keywordtype}{int}\ cycle\_time)\ \{}
+\DoxyCodeLine{\Hypertarget{web__server_8cpp_source_l00042}00042\ \ \ \ \ \textcolor{keywordflow}{if}\ (is\_busy)\ \{}
+\DoxyCodeLine{\Hypertarget{web__server_8cpp_source_l00043}00043\ \ \ \ \ \ \ \ \ current\_request.time\ -\/=\ cycle\_time;}
+\DoxyCodeLine{\Hypertarget{web__server_8cpp_source_l00044}00044\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (current\_request.time\ <=\ 0)\ \{}
+\DoxyCodeLine{\Hypertarget{web__server_8cpp_source_l00045}00045\ \ \ \ \ \ \ \ \ \ \ \ \ is\_busy\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{web__server_8cpp_source_l00046}00046\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{web__server_8cpp_source_l00047}00047\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{web__server_8cpp_source_l00048}00048\ \}}
 
 \end{DoxyCode}
