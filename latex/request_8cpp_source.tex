@@ -1,0 +1,22 @@
+\doxysection{request.\+cpp}
+\hypertarget{request_8cpp_source}{}\label{request_8cpp_source}\index{src/request.cpp@{src/request.cpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{request_8cpp_source_l00001}00001\ }
+\DoxyCodeLine{\Hypertarget{request_8cpp_source_l00008}00008\ \textcolor{preprocessor}{\#include\ "{}web\_server.h"{}}}
+\DoxyCodeLine{\Hypertarget{request_8cpp_source_l00009}00009\ \textcolor{preprocessor}{\#include\ "{}request.h"{}}}
+\DoxyCodeLine{\Hypertarget{request_8cpp_source_l00010}00010\ \textcolor{preprocessor}{\#include\ "{}request\_queue.h"{}}}
+\DoxyCodeLine{\Hypertarget{request_8cpp_source_l00011}00011\ \textcolor{preprocessor}{\#include\ "{}load\_balancer.h"{}}}
+\DoxyCodeLine{\Hypertarget{request_8cpp_source_l00012}00012\ }
+\DoxyCodeLine{\Hypertarget{request_8cpp_source_l00013}00013\ \textcolor{preprocessor}{\#include\ <string>}\ \ \ \textcolor{comment}{//\ for\ string\ class}}
+\DoxyCodeLine{\Hypertarget{request_8cpp_source_l00014}00014\ \textcolor{preprocessor}{\#include\ <time.h>}\ \ \ \textcolor{comment}{//\ for\ time\ related\ functions}}
+\DoxyCodeLine{\Hypertarget{request_8cpp_source_l00015}00015\ \textcolor{preprocessor}{\#include\ <chrono>}\ \ \ \textcolor{comment}{//\ for\ high\_resolution\_clock}}
+\DoxyCodeLine{\Hypertarget{request_8cpp_source_l00016}00016\ }
+\DoxyCodeLine{\Hypertarget{request_8cpp_source_l00017}00017\ \textcolor{preprocessor}{\#include\ <cstdlib>}\ \ \textcolor{comment}{//\ for\ rand()}}
+\DoxyCodeLine{\Hypertarget{request_8cpp_source_l00018}00018\ }
+\DoxyCodeLine{\Hypertarget{request_8cpp_source_l00019}00019\ \textcolor{keyword}{using\ namespace\ }std;}
+\DoxyCodeLine{\Hypertarget{request_8cpp_source_l00020}00020\ }
+\DoxyCodeLine{\Hypertarget{request_8cpp_source_l00028}00028\ Request::Request(\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ IP\_in,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ IP\_out,\ \textcolor{keywordtype}{int}\ time)}
+\DoxyCodeLine{\Hypertarget{request_8cpp_source_l00029}00029\ \ \ \ \ :\ IP\_in(IP\_in),\ IP\_out(IP\_out),\ time(time)\ \{\}}
+
+\end{DoxyCode}

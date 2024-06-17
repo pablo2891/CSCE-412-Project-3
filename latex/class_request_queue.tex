@@ -1,0 +1,76 @@
+\doxysection{Request\+Queue Class Reference}
+\hypertarget{class_request_queue}{}\label{class_request_queue}\index{RequestQueue@{RequestQueue}}
+
+
+\texorpdfstring{$<$}{<} Use the standard namespace.  
+
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_request_queue_a21e0a1d77be4020d82b062e328b4d6dd}{add\+Request}} (const Request \&request)
+\begin{DoxyCompactList}\small\item\em Add a request to the queue. \end{DoxyCompactList}\item 
+Request \mbox{\hyperlink{class_request_queue_aabcf6ed3aba61682bdfcc5c48d2face5}{get\+Next\+Request}} ()
+\begin{DoxyCompactList}\small\item\em Get the next request from the queue. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_request_queue_a64c8b54cc30da887d61663e44dece1d5}{is\+Empty}} () const
+\begin{DoxyCompactList}\small\item\em Check if the queue is empty. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\texorpdfstring{$<$}{<} Use the standard namespace. 
+
+Represents a queue for holding requests.
+
+This class manages a queue of Request objects and provides methods to add requests, retrieve the next request, and check if the queue is empty. 
+
+Definition at line \mbox{\hyperlink{request__queue_8cpp_source_l00023}{23}} of file \mbox{\hyperlink{request__queue_8cpp_source}{request\+\_\+queue.\+cpp}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_request_queue_a21e0a1d77be4020d82b062e328b4d6dd}\index{RequestQueue@{RequestQueue}!addRequest@{addRequest}}
+\index{addRequest@{addRequest}!RequestQueue@{RequestQueue}}
+\doxysubsubsection{\texorpdfstring{addRequest()}{addRequest()}}
+{\footnotesize\ttfamily \label{class_request_queue_a21e0a1d77be4020d82b062e328b4d6dd} 
+void Request\+Queue\+::add\+Request (\begin{DoxyParamCaption}\item[{const Request \&}]{request}{}\end{DoxyParamCaption})}
+
+
+
+Add a request to the queue. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em request} & The Request object to add. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_request_queue_aabcf6ed3aba61682bdfcc5c48d2face5}\index{RequestQueue@{RequestQueue}!getNextRequest@{getNextRequest}}
+\index{getNextRequest@{getNextRequest}!RequestQueue@{RequestQueue}}
+\doxysubsubsection{\texorpdfstring{getNextRequest()}{getNextRequest()}}
+{\footnotesize\ttfamily \label{class_request_queue_aabcf6ed3aba61682bdfcc5c48d2face5} 
+Request Request\+Queue\+::get\+Next\+Request (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Get the next request from the queue. 
+
+\begin{DoxyReturn}{Returns}
+The next Request object in the queue. 
+\end{DoxyReturn}
+\Hypertarget{class_request_queue_a64c8b54cc30da887d61663e44dece1d5}\index{RequestQueue@{RequestQueue}!isEmpty@{isEmpty}}
+\index{isEmpty@{isEmpty}!RequestQueue@{RequestQueue}}
+\doxysubsubsection{\texorpdfstring{isEmpty()}{isEmpty()}}
+{\footnotesize\ttfamily \label{class_request_queue_a64c8b54cc30da887d61663e44dece1d5} 
+bool Request\+Queue\+::is\+Empty (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Check if the queue is empty. 
+
+\begin{DoxyReturn}{Returns}
+true if the queue is empty, false otherwise. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/\mbox{\hyperlink{request__queue_8cpp}{request\+\_\+queue.\+cpp}}\end{DoxyCompactItemize}
