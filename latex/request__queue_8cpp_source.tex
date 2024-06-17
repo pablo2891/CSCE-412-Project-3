@@ -9,32 +9,26 @@
 \DoxyCodeLine{\Hypertarget{request__queue_8cpp_source_l00009}00009\ }
 \DoxyCodeLine{\Hypertarget{request__queue_8cpp_source_l00010}00010\ \textcolor{keyword}{using\ namespace\ }std;}
 \DoxyCodeLine{\Hypertarget{request__queue_8cpp_source_l00011}00011\ }
-\DoxyCodeLine{\Hypertarget{request__queue_8cpp_source_l00012}00012\ \textcolor{comment}{//\ Constructor}}
-\DoxyCodeLine{\Hypertarget{request__queue_8cpp_source_l00013}00013\ RequestQueue::RequestQueue()\ \{\}}
-\DoxyCodeLine{\Hypertarget{request__queue_8cpp_source_l00014}00014\ }
-\DoxyCodeLine{\Hypertarget{request__queue_8cpp_source_l00015}00015\ \textcolor{comment}{//\ Method\ to\ add\ a\ request\ to\ the\ queue}}
 \DoxyCodeLine{\Hypertarget{request__queue_8cpp_source_l00016}00016\ \textcolor{keywordtype}{void}\ RequestQueue::addRequest(\textcolor{keyword}{const}\ Request\&\ request)\ \{}
 \DoxyCodeLine{\Hypertarget{request__queue_8cpp_source_l00017}00017\ \ \ \ \ q.push(request);}
 \DoxyCodeLine{\Hypertarget{request__queue_8cpp_source_l00018}00018\ \}}
 \DoxyCodeLine{\Hypertarget{request__queue_8cpp_source_l00019}00019\ }
-\DoxyCodeLine{\Hypertarget{request__queue_8cpp_source_l00020}00020\ \textcolor{comment}{//\ Method\ to\ get\ the\ next\ request\ from\ the\ queue}}
-\DoxyCodeLine{\Hypertarget{request__queue_8cpp_source_l00021}00021\ Request\ RequestQueue::getNextRequest()\ \{}
-\DoxyCodeLine{\Hypertarget{request__queue_8cpp_source_l00022}00022\ \ \ \ \ \textcolor{keywordflow}{if}\ (!q.empty())\ \{}
-\DoxyCodeLine{\Hypertarget{request__queue_8cpp_source_l00023}00023\ \ \ \ \ \ \ \ \ Request\ req\ =\ q.front();}
-\DoxyCodeLine{\Hypertarget{request__queue_8cpp_source_l00024}00024\ \ \ \ \ \ \ \ \ q.pop();}
-\DoxyCodeLine{\Hypertarget{request__queue_8cpp_source_l00025}00025\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ req;}
-\DoxyCodeLine{\Hypertarget{request__queue_8cpp_source_l00026}00026\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{request__queue_8cpp_source_l00027}00027\ \ \ \ \ \textcolor{keywordflow}{return}\ \{\textcolor{stringliteral}{"{}"{}},\ \textcolor{stringliteral}{"{}"{}},\ 0\};\ \textcolor{comment}{//\ Return\ an\ empty\ request\ if\ the\ queue\ is\ empty}}
-\DoxyCodeLine{\Hypertarget{request__queue_8cpp_source_l00028}00028\ \}}
-\DoxyCodeLine{\Hypertarget{request__queue_8cpp_source_l00029}00029\ }
-\DoxyCodeLine{\Hypertarget{request__queue_8cpp_source_l00030}00030\ \textcolor{comment}{//\ Method\ to\ check\ if\ the\ queue\ is\ empty}}
-\DoxyCodeLine{\Hypertarget{request__queue_8cpp_source_l00031}00031\ \textcolor{keywordtype}{bool}\ RequestQueue::isEmpty()\textcolor{keyword}{\ const\ }\{}
-\DoxyCodeLine{\Hypertarget{request__queue_8cpp_source_l00032}00032\ \ \ \ \ \textcolor{keywordflow}{return}\ q.empty();}
-\DoxyCodeLine{\Hypertarget{request__queue_8cpp_source_l00033}00033\ \}}
-\DoxyCodeLine{\Hypertarget{request__queue_8cpp_source_l00034}00034\ }
-\DoxyCodeLine{\Hypertarget{request__queue_8cpp_source_l00035}00035\ \textcolor{comment}{//\ Method\ to\ get\ the\ current\ size\ of\ the\ queue}}
-\DoxyCodeLine{\Hypertarget{request__queue_8cpp_source_l00036}00036\ \textcolor{keywordtype}{int}\ RequestQueue::getQueueSize()\textcolor{keyword}{\ const\ }\{}
-\DoxyCodeLine{\Hypertarget{request__queue_8cpp_source_l00037}00037\ \ \ \ \ \textcolor{keywordflow}{return}\ q.size();}
-\DoxyCodeLine{\Hypertarget{request__queue_8cpp_source_l00038}00038\ \}}
+\DoxyCodeLine{\Hypertarget{request__queue_8cpp_source_l00024}00024\ Request\ RequestQueue::getNextRequest()\ \{}
+\DoxyCodeLine{\Hypertarget{request__queue_8cpp_source_l00025}00025\ \ \ \ \ \textcolor{keywordflow}{if}\ (!q.empty())\ \{}
+\DoxyCodeLine{\Hypertarget{request__queue_8cpp_source_l00026}00026\ \ \ \ \ \ \ \ \ Request\ req\ =\ q.front();}
+\DoxyCodeLine{\Hypertarget{request__queue_8cpp_source_l00027}00027\ \ \ \ \ \ \ \ \ q.pop();}
+\DoxyCodeLine{\Hypertarget{request__queue_8cpp_source_l00028}00028\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ req;}
+\DoxyCodeLine{\Hypertarget{request__queue_8cpp_source_l00029}00029\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{request__queue_8cpp_source_l00030}00030\ \ \ \ \ \textcolor{keywordflow}{return}\ \{\textcolor{stringliteral}{"{}"{}},\ \textcolor{stringliteral}{"{}"{}},\ 0\};\ \textcolor{comment}{//\ Return\ an\ empty\ request\ if\ the\ queue\ is\ empty}}
+\DoxyCodeLine{\Hypertarget{request__queue_8cpp_source_l00031}00031\ \}}
+\DoxyCodeLine{\Hypertarget{request__queue_8cpp_source_l00032}00032\ }
+\DoxyCodeLine{\Hypertarget{request__queue_8cpp_source_l00037}00037\ \textcolor{keywordtype}{bool}\ RequestQueue::isEmpty()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{\Hypertarget{request__queue_8cpp_source_l00038}00038\ \ \ \ \ \textcolor{keywordflow}{return}\ q.empty();}
+\DoxyCodeLine{\Hypertarget{request__queue_8cpp_source_l00039}00039\ \}}
+\DoxyCodeLine{\Hypertarget{request__queue_8cpp_source_l00040}00040\ }
+\DoxyCodeLine{\Hypertarget{request__queue_8cpp_source_l00045}00045\ \textcolor{keywordtype}{int}\ RequestQueue::size()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{\Hypertarget{request__queue_8cpp_source_l00046}00046\ \ \ \ \ \textcolor{keywordflow}{return}\ q.size();}
+\DoxyCodeLine{\Hypertarget{request__queue_8cpp_source_l00047}00047\ \}}
+\DoxyCodeLine{\Hypertarget{request__queue_8cpp_source_l00048}00048\ }
 
 \end{DoxyCode}

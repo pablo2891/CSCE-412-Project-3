@@ -15,14 +15,12 @@
 using namespace std;
 
 /**
- * @brief Constructor for WebServer class.
- * Initializes the server as not busy.
+ * @brief Constructor to initialize a WebServer.
  */
 WebServer::WebServer() : is_busy(false) {}
 
 /**
- * @brief Process a new request.
- *
+ * @brief Method to process a new request.
  * @param request The request to be processed.
  */
 void WebServer::processRequest(const Request& request) {
@@ -31,21 +29,16 @@ void WebServer::processRequest(const Request& request) {
 }
 
 /**
- * @brief Check if the server is currently busy.
- *
- * @return true if the server is busy, false otherwise.
+ * @brief Method to check if the server is busy.
+ * @return True if the server is busy, otherwise false.
  */
 bool WebServer::isBusy() const {
     return is_busy;
 }
 
 /**
- * @brief Update the server's state based on elapsed time.
- *
- * If the server is busy, reduce the remaining time of the current request by cycle_time.
- * If the remaining time of the current request becomes zero or less, mark the server as not busy.
- *
- * @param cycle_time The elapsed time to update the server's state.
+ * @brief Method to update the server's state.
+ * @param cycle_time The time cycle for updating the state.
  */
 void WebServer::update(int cycle_time) {
     if (is_busy) {

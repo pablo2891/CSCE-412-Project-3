@@ -2,20 +2,28 @@
 #define REQUEST_H
 
 #include <string>
-#include <queue>
 
-using namespace std;
+/**
+ * @brief Class representing a request.
+ */
+class Request {
+public:
+    std::string IP_in; /**< IP address of the requester */
+    std::string IP_out; /**< IP address of the responder */
+    int time; /**< Processing time for the request */
 
-
-struct Request {
-    string IP_in;  /**< Incoming IP address */
-    string IP_out; /**< Outgoing IP address */
-    int time;           /**< Processing time in clock cycles */
-
-    // Default Constructor
+    /**
+     * @brief Default constructor to initialize a Request with empty strings and zero time.
+     */
     Request() : IP_in(""), IP_out(""), time(0) {}
-    // Constructor
-    Request(const string& IP_in, const string& IP_out, int time);
+
+    /**
+     * @brief Constructor to initialize a Request.
+     * @param IP_in IP address of the requester.
+     * @param IP_out IP address of the responder.
+     * @param time Processing time for the request.
+     */
+    Request(const std::string& IP_in, const std::string& IP_out, int time);
 };
 
 #endif // REQUEST_H

@@ -19,11 +19,11 @@
 using namespace std;
 
 /**
- * @brief Constructor definition for Request class.
- *
- * @param IP_in     Incoming IP address as string.
- * @param IP_out    Outgoing IP address as string.
- * @param time      Time of request in seconds.
+ * @brief Constructor to initialize a Request.
+ * @param IP_in IP address of the requester.
+ * @param IP_out IP address of the responder.
+ * @param time Processing time for the request.
  */
-Request::Request(const string& IP_in, const string& IP_out, int time)
+Request::Request(const std::string& IP_in, const std::string& IP_out, int time)
     : IP_in(IP_in), IP_out(IP_out), time(time) {}
+

@@ -1,28 +1,38 @@
 #ifndef WEB_SERVER_H
 #define WEB_SERVER_H
 
-
-#include <chrono>
 #include "request.h"
 
-/* The WebServer class manages incoming requests, processes them, and updates its status based on the
-cycle time. */
+/**
+ * @brief Class representing a web server.
+ */
 class WebServer {
 private:
-    bool is_busy;
-    Request current_request;
+    bool is_busy; /**< Indicates if the server is busy */
+    Request current_request; /**< The current request being processed */
 
 public:
-    // Constructor
+    /**
+     * @brief Constructor to initialize a WebServer.
+     */
     WebServer();
 
-    // Method to process a new request
+    /**
+     * @brief Method to process a new request.
+     * @param request The request to be processed.
+     */
     void processRequest(const Request& request);
 
-    // Method to check if the server is busy
+    /**
+     * @brief Method to check if the server is busy.
+     * @return True if the server is busy, otherwise false.
+     */
     bool isBusy() const;
 
-    // Method to update the server's state
+    /**
+     * @brief Method to update the server's state.
+     * @param cycle_time The time cycle for updating the state.
+     */
     void update(int cycle_time);
 };
 

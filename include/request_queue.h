@@ -1,24 +1,26 @@
 #ifndef REQUEST_QUEUE_H
 #define REQUEST_QUEUE_H
 
-#include <queue>
 #include "request.h"
+#include <queue>
 
 /**
- * @class RequestQueue
- * @brief Class to manage a queue of requests.
+ * @brief Class representing a queue of requests.
  */
 class RequestQueue {
+private:
+    std::queue<Request> q; /**< Queue to store requests */
+
 public:
     /**
      * @brief Method to add a request to the queue.
-     * @param request The request to add.
+     * @param request The request to be added.
      */
     void addRequest(const Request& request);
 
     /**
      * @brief Method to get the next request from the queue.
-     * @return The next request.
+     * @return The next request from the queue.
      */
     Request getNextRequest();
 
@@ -33,9 +35,6 @@ public:
      * @return The size of the queue.
      */
     int size() const;
-
-private:
-    std::queue<Request> q; ///< Queue to store the requests.
 };
 
 #endif // REQUEST_QUEUE_H
