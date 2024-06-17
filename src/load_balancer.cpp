@@ -1,36 +1,23 @@
-/**
- * @file load_balancer.cpp
- * @brief Implementation file for the LoadBalancer class.
- */
-
 #include "load_balancer.h"
-#include "web_server.h"
-#include "request_queue.h"
-#include <cstdlib>
-#include <ctime>
 #include <iostream>
+#include <cstdlib> // for rand()
 
 using namespace std;
 
-// Constructor
 LoadBalancer::LoadBalancer(int num_servers) {
     servers.resize(num_servers);
-    srand(time(0)); // Seed random number generator
 }
 
-// Method to add a server
 void LoadBalancer::addServer() {
     servers.push_back(WebServer());
 }
 
-// Method to remove a server
 void LoadBalancer::removeServer() {
     if (!servers.empty()) {
         servers.pop_back();
     }
 }
 
-// Method to balance load across servers
 void LoadBalancer::balanceLoad(int cycle_time) {
     for (auto &server : servers) {
         server.update(cycle_time);
@@ -40,23 +27,22 @@ void LoadBalancer::balanceLoad(int cycle_time) {
     }
 }
 
-// Method to add a request to the queue
 void LoadBalancer::addRequest(const Request& request) {
     request_queue.addRequest(request);
 }
 
-// Method to run the load balancer simulation
 void LoadBalancer::run(int total_time) {
     for (int time = 0; time < total_time; ++time) {
         // Simulate adding new requests
-        if (rand() % 10 < 3) { // 30% chance to add a new request
-            addRequest({"192.168.0.1", "192.168.0.2", rand() % 10 + 1});
+        if (rand() % 10 < 5) { // 50% chance to add a new request
+            Request new_request{"192.168.0.1", "192.168.0.2", rand() % 10 + 1};
+            cout << "Adding request: " << new_request.IP_in << " -> " << new_request.IP_out << " with time " << new_request.time << endl;
+            addRequest(new_request);
         }
         balanceLoad(1); // Simulate one cycle
     }
 }
 
-// Method to get the queue size
 int LoadBalancer::getQueueSize() const {
-    return request_queue.getQueueSize();
+    return request_queue.size();
 }

@@ -10,7 +10,7 @@
 using namespace std;
 
 // Constructor
-RequestQueue::RequestQueue() {}
+//RequestQueue::RequestQueue() {}
 
 // Method to add a request to the queue
 void RequestQueue::addRequest(const Request& request) {
@@ -33,6 +33,6 @@ bool RequestQueue::isEmpty() const {
 }
 
 // Method to get the current size of the queue
-int RequestQueue::getQueueSize() const {
+int RequestQueue::size() const {
     return q.size();
 }
