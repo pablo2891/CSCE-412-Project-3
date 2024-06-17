@@ -54,7 +54,7 @@ PROJECT_NUMBER         =
 # for a project that appears at the top of each page and should give viewer a
 # quick idea about the purpose of the project. Keep the description short.
 
-PROJECT_BRIEF          =
+PROJECT_BRIEF          = "The Load Balancer Simulation project aims to model a system where multiple web servers manage incoming requests efficiently. Load balancers are critical components in large-scale web applications to distribute incoming traffic across multiple servers, ensuring optimal performance and resource utilization."
 
 # With the PROJECT_LOGO tag one can specify a logo or an icon that is included
 # in the documentation. The maximum height of the logo should not exceed 55
