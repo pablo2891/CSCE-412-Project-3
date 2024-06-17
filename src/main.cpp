@@ -1,3 +1,7 @@
+/**
+ * @file main.cpp
+ * @brief Main driver program for the load balancer simulation.
+ */
 #include "request.h"
 #include "web_server.h"
 #include "request_queue.h"

@@ -1,8 +1,6 @@
 /**
- * @file web_server.h
- * @file request.h
- * @file request_queue.h
- * @file load_balancer.h
+ * @file request.cpp
+ * @brief Implementation file for the Request class.
  */
 
 #include "web_server.h"
