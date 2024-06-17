@@ -1,3 +1,8 @@
+/**
+ * @file load_balancer.cpp
+ * @brief Implementation file for the LoadBalancer class.
+ */
+
 #include "load_balancer.h"
 #include <iostream>
 #include <cstdlib> // for rand()
