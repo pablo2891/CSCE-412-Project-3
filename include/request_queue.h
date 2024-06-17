@@ -8,7 +8,7 @@ using namespace std;
 
 class RequestQueue {
 private:
-    queue<Request> queue;
+    queue<Request> q;
 
 public:
     // Method to add a request to the queue

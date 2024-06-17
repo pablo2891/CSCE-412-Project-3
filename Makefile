@@ -1,10 +1,10 @@
-CC = gcc
+CC = g++
 CFLAGS = -Wall -Werror
 INCLUDES = -Iinclude
 
 # Targets
 TARGET = myprogram
-SOURCES = src/main.cpp src/request.cpp src/request_queue.cpp src/load_balancer.cpp src/web_server.ccp
+SOURCES = src/main.cpp src/request.cpp src/request_queue.cpp src/load_balancer.cpp src/web_server.cpp
 OBJECTS = $(SOURCES:.cpp=.o)
 
 # Build the executable
